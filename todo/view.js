@@ -1,11 +1,27 @@
 function render(data) {
   const result = `
-    <h1>
-      ${data.join(', ')}
-    </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+    ${data
+      .map(
+        todo => `
+      <tr>
+        <td>${todo}</td>
+      </tr>
+      `,
+      )
+      .join('')}
+      
+    </tbody>
+  </table>
   `;
 
   return result;
 }
 
-module.exports = {render};
+module.exports = { render };
