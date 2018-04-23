@@ -1,5 +1,6 @@
 {
   "name": "nodejs-workshop",
+  "private":true,
   "version": "1.0.0",
   "description": "JAX node JS wokshop",
   "main": "index.js",
