@@ -22,6 +22,7 @@ function render(data) {
           todo => `
         <tr>
           <td>${todo}</td>
+          <td>  <a href=/todo/delete/${todo}> delete </a></td>
         </tr>
         `,
         )

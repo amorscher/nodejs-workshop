@@ -6,6 +6,14 @@ function listAction(req, res) {
   res.send(view.render(data));
 }
 
+function deleteAction(req, res) {
+  console.log(req.params.id);
+  // delete stuff
+  model.delete(req.params.id);
+  res.redirect(req.baseUrl);
+}
+
 module.exports = {
   listAction,
+  deleteAction,
 };
