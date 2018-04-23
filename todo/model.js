@@ -11,5 +11,14 @@ module.exports = {
   },
   delete(id){
     data = data.filter(it=>it.id !== id );
+  },
+  save(newTitle){
+    const nextId = data.reduce((prev,todo)=>{
+      if(prev > todo.id){
+        return prev;
+      }
+      return todo.id
+    },0)+1;
+    data.push({title:newTitle.title, id:nextId});
   }
 };
