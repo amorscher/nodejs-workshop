@@ -9,7 +9,7 @@ function listAction(req, res) {
 function deleteAction(req, res) {
   console.log(req.params.id);
   // delete stuff
-  model.delete(req.params.id);
+  model.delete(parseInt(req.params.id));
   res.redirect(req.baseUrl);
 }
 

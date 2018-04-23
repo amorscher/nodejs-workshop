@@ -13,20 +13,23 @@ function render(data) {
     <table>
       <thead>
         <tr>
+        <th>id</th>
           <th>Title</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
       ${data
-        .map(
-          todo => `
+      .map(
+        todo => `
         <tr>
-          <td>${todo}</td>
-          <td>  <a href=/todo/delete/${todo}> delete </a></td>
+          <td>${todo.id}</td>
+          <td>${todo.title}</td>
+          <td>  <a href=/todo/delete/${todo.id}> delete </a></td>
         </tr>
         `,
-        )
-        .join('')}
+    )
+      .join('')}
         
       </tbody>
     </table>
