@@ -5,7 +5,9 @@
   "description": "JAX node JS wokshop",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node index.js",
+    "build": "eslint index.js"
   },
   "repository": {
     "type": "git",
