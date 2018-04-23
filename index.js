@@ -4,8 +4,10 @@ const express = require('express');
 // router holen
 const router = require('./todo');
 
+
 // app objekt erzeugen
 const app = express();
+app.use(express.static(__dirname + '/public'));
 
 // routing funktion auf http://localhost:8080/
 /*app.get('/', (req, res) => {
