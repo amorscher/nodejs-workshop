@@ -1,5 +1,8 @@
 // express laden
 const express = require('express');
+const morgan = require('morgan');
+var fs = require('fs');
+const path = require('path');
 
 // router holen
 const router = require('./todo');
@@ -9,6 +12,11 @@ const router = require('./todo');
 const app = express();
 app.use(express.static(__dirname + '/public'));
 
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'})
+ 
+// setup the logger
+app.use(morgan('combined', {stream: accessLogStream}))
 // routing funktion auf http://localhost:8080/
 /*app.get('/', (req, res) => {
   // expliziter Breakpoint mit debugger;
